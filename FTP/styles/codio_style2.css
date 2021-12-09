@@ -75,20 +75,110 @@
 /* Section Rewarss */
 
 .section.rewards {
-	margin-top: -100px;
+	margin-top: -100px !important;
 }
+
+@media screen and (max-width: 991.98px) {
+	.row .column {
+		width: 100%;
+	}
+
+	.row {
+		flex-wrap: wrap;
+	}
+
+	.rewards .row {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.rewards .row .column {
+		justify-content: center;
+	}
+
+	.rewards .row .column:first-child {
+		margin-right: 0;
+	}
+
+	.rewards .content-block-image {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	.rewards .embient-bg-content .text {
+		text-align: center;
+		align-items: center;
+	}
+}
+
+
+
 
 /* other changes */
 
+body {
+	overflow-x: hidden;
+	display: unset;
+}
+
 #jumbVideo {
 	z-index: -2;
+	object-fit: cover;
 }
 
 .jumb:before {
 	z-index: -1;
+	height: calc(100% + 2px);
+	width: 100%;
+}
+
+.jumb {
+	padding: 0 !important;
+	height: 100vh;
+	min-height: 800px;
+}
+
+.section {
+	margin-top: 150px !important;
+}
+
+.sold__image img {
+	/* height: 420px; */
+}
+
+.section.sold {
+	margin-top: 100px !important;
+}
+
+.section.subscribe.plate {
+	margin-top: 100px !important;
+}
+
+.section.roadmap {
+	margin-top: 120px !important;
+}
+
+@media screen and (max-width: 991.98px) {
+	.lucky__inner {
+		flex-direction: column;
+	}
+
+	.lucky__inner .lucky__image {
+		margin-bottom: 3rem;
+	}
+
+	.lucky__info {
+		text-align: center;
+	}
 }
 
 /* new universal clasess */
+
+.parallax-elem {
+	/* transition: all .2s ease-in-out; */
+}
 
 .row {
 	display: flex;
@@ -124,6 +214,12 @@
 	background-color: rgba(255,255,255, .06);
 	border-radius: 12px;
 	padding: 60px;
+}
+
+@media screen and (max-width: 575.98px) {
+	.embient-bg {
+		padding: 20px;
+	}
 }
 
 .embient-bg_bubble {
