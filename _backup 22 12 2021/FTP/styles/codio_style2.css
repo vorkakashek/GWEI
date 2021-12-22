@@ -1,0 +1,252 @@
+/* vars */
+
+:root {
+	--blue: #32cdef;
+	--pink: #ef328d;
+}
+
+/* Title style like "Liquidity Provider Rewards" */
+
+.title_style {
+	font-size: 38px;
+}
+
+.title_style > span {
+	position: relative;
+	white-space: nowrap;
+}
+
+.title_style > span:first-child {
+	color: var(--blue);
+}
+
+.title_style > span:first-child:after {
+	font-size: 56px;
+	top: -50%;
+	text-shadow: 0px 3px 11px var(--blue), 0px -3px 20px var(--blue), 3px 0px 10px var(--blue), -3px 0px 20px var(--blue);
+}
+
+.title_style > span:last-child:after {
+	top: 20%; 
+	color: var(--pink);
+	text-shadow: 0px 3px 11px var(--pink), 0px -3px 20px var(--pink), 3px 0px 10px var(--pink), -3px 0px 20px var(--pink);
+}
+
+.title_style > span:last-child {
+	font-size: 106px;
+}
+
+.title_style[data-title="Liquidity_Provider_Rewards"] > span:first-child:after {
+	content: 'Liquidity Provider';
+}
+
+.title_style[data-title="Liquidity_Provider_Rewards"] > span:last-child:after {
+	content: 'Rewards';
+}
+
+.title_style > span:after {
+	font-family: Exodar, sans-serif;
+	position: absolute;
+	z-index: -1;
+	opacity: .2;
+	left: 0;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 575.98px) {
+	.title_style > span:first-child:after {
+		font-size: 10vw;
+	}
+
+	.title_style > span:last-child:after {
+		font-size: 20vw;
+	}
+
+	.title_style > span:first-child {
+		font-size: 7vw;
+	}
+
+	.title_style > span:last-child {
+		font-size: 15vw;
+	}
+}
+
+
+/* Section Rewarss */
+
+.section.rewards {
+	margin-top: -100px !important;
+}
+
+@media screen and (max-width: 991.98px) {
+	.row .column {
+		width: 100%;
+	}
+
+	.row {
+		flex-wrap: wrap;
+	}
+
+	.rewards .row {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.rewards .row .column {
+		justify-content: center;
+	}
+
+	.rewards .row .column:first-child {
+		margin-right: 0;
+	}
+
+	.rewards .content-block-image {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	.rewards .embient-bg-content .text {
+		text-align: center;
+		align-items: center;
+	}
+}
+
+
+
+
+/* other changes */
+
+body {
+	overflow-x: hidden;
+	display: unset;
+}
+
+#jumbVideo {
+	z-index: -2;
+	object-fit: cover;
+}
+
+.jumb:before {
+	z-index: -1;
+	height: calc(100% + 2px);
+	width: 100%;
+}
+
+.jumb {
+	padding: 0 !important;
+	height: 100vh;
+	min-height: 800px;
+}
+
+.section {
+	margin-top: 150px !important;
+}
+
+.sold__image img {
+	/* height: 420px; */
+}
+
+.section.sold {
+	margin-top: 100px !important;
+}
+
+.section.subscribe.plate {
+	margin-top: 100px !important;
+}
+
+.section.roadmap {
+	margin-top: 120px !important;
+}
+
+@media screen and (max-width: 991.98px) {
+	.lucky__inner {
+		flex-direction: column;
+	}
+
+	.lucky__inner .lucky__image {
+		margin-bottom: 3rem;
+	}
+
+	.lucky__info {
+		text-align: center;
+	}
+}
+
+/* new universal clasess */
+
+.parallax-elem {
+	/* transition: all .2s ease-in-out; */
+}
+
+.row {
+	display: flex;
+}
+
+
+.column:first-child {
+	margin-right: 60px;
+}
+
+.content-block-image {
+	width: 360px;
+	height: 100%;
+}
+
+.content-block-image > img {
+	height: 100%;
+	object-fit: contain;
+}
+
+.content-block {
+	margin: 100px 0;
+	position: relative;
+}
+
+.content-side {
+	flex: 1 0 0;
+}
+
+.embient-bg {
+	width: 100%;
+	backdrop-filter: brightness(1) blur(150px);
+	background-color: rgba(255,255,255, .06);
+	border-radius: 12px;
+	padding: 60px;
+}
+
+@media screen and (max-width: 575.98px) {
+	.embient-bg {
+		padding: 20px;
+	}
+}
+
+.embient-bg_bubble {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	height: 100%;
+	border-radius: 100%;
+	opacity: .16;
+}
+
+.embient-bg_bubble:nth-child(1) {
+	width: 35%;
+	left: 0;
+	background-color: #fff;
+}
+
+.embient-bg_bubble:nth-child(2) {
+	right: 0;
+	left: unset;
+	width: 70%;
+	background-color: var(--blue);
+}
+
+.embient-bg-content .text{
+	align-items: flex-start;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// console.log('ready!')
 
 	// Parallax Scroll
-	paralaxInit();
 	var lastScrollTop = 0;
 
 	function elemInViewport(elem, full) {
@@ -44,28 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Сразу после загрузки скрипта расставим параллакс элементы по местам
-
-	function paralaxInit() {
-		var scrollVal = window.pageYOffset || document.documentElement.scrollTop; // сколько проскроллено от верха стр
-
-		for (const element of document.querySelectorAll('section')) {
-			var parallaxElem = element.querySelector('.parallax-elem'); // parallax объект
-			var windowH = window.innerHeight;
-			let offsetVal = windowH / 100;
-
-			if (parallaxElem !== null && elemInViewport(parallaxElem, false)) {
-				const offsetY = (parallaxElem.getBoundingClientRect().top - parallaxElem.getBoundingClientRect().height / 5) / (windowH / 100);
-				parallaxElem.style.transform = "translateY(" + offsetY / 2.5 + "%)";
-				parallaxElem.style.opacity = offsetY / 2.5;
-			}
-		}
-	}
-
 
 	window.addEventListener("scroll", function () {
 		var scrollVal = window.pageYOffset || document.documentElement.scrollTop; // сколько проскроллено от верха стр
-
+		
 		for (const element of document.querySelectorAll('section')) {
 			var parallaxElem = element.querySelector('.parallax-elem'); // parallax объект
 			var windowH = window.innerHeight;
@@ -73,19 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			if (parallaxElem !== null && elemInViewport(parallaxElem, false)) {
 				const offsetY = (parallaxElem.getBoundingClientRect().top - parallaxElem.getBoundingClientRect().height / 5) / (windowH / 100);
-				
-				const elemOpacity = 1 - (offsetY * .01);
-				const elemOffsetY = offsetY / 2.5;
-				
-				if (elemOffsetY > 0) {
-					parallaxElem.style.transform = "translateY(" + elemOffsetY + "%)";
-				}
-
-				if (elemOpacity < 1.1) {
-					parallaxElem.style.opacity = elemOpacity;
-				}
-				
-				
+				parallaxElem.style.transform = "translateY(" + offsetY / 2 + "%)";
 			}
 		}
 	});
